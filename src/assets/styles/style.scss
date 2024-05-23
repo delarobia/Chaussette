@@ -1,0 +1,17 @@
+@import "./../../../node_modules/bootstrap/scss/functions";
+@import "./../../../node_modules/bootstrap/scss/variables";
+@import "./../../../node_modules/bootstrap/scss/variables-dark";
+
+
+
+$parchemin : #F0E7C5;
+$rouge-velours: #742020;
+
+$custom_map : (
+    parchemin: $parchemin,
+    rouge-velours: $rouge-velours,
+);
+
+$theme-colors : map-merge($map1: $theme-colors, $map2: $custom_map);
+
+@import "./../../../node_modules/bootstrap/scss/bootstrap";
