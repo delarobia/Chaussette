@@ -1,9 +1,9 @@
 @import "./../../../node_modules/bootstrap/scss/functions";
 @import "./../../../node_modules/bootstrap/scss/variables";
 @import "./../../../node_modules/bootstrap/scss/variables-dark";
+@import "./../../../node_modules/bootstrap/scss/mixins";
 
-
-
+//Couleur bg + font
 $parchemin : #F0E7C5;
 $rouge-velours: #742020;
 
@@ -13,5 +13,93 @@ $custom_map : (
 );
 
 $theme-colors : map-merge($map1: $theme-colors, $map2: $custom_map);
+
+//Image de fond
+.bg-image{
+    height: 88vh;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+//Icones dans le formulaire signIn
+$form-icon-size : 50px;
+
+@mixin form-icon-size($size){
+    width: $size;
+    height: $size;
+}
+
+.formIcons{
+    @include form-icon-size($form-icon-size);
+
+    
+}
+
+//Icone chaussette
+$sock-icon-size : 70px;
+
+@mixin sock-icon-size($size){
+    width: $size;
+    height: $size;
+}
+
+.navSock{
+    @include sock-icon-size($sock-icon-size);
+}
+
+//Icones de la navabarre
+$nav-icon-size : 50px;
+
+@mixin nav-icon-size($size){
+    width : $size;
+    height : $size;
+}
+
+.navIcons{
+    @include nav-icon-size($nav-icon-size);
+}
+
+//Media queries
+$breakpoint-small: 977px;
+$breakpoint-medium: 990px;
+
+@media(max-width :$breakpoint-small){
+    .form_contain{
+        height : 700px;
+    }
+    #againstBT{
+        margin-bottom : 5rem;
+    }
+
+    #againstBT .form_display{
+        flex-direction: column;
+        align-items: center;
+    }
+    #againstBT .form_display div{ 
+        width: 100%;
+    }
+}
+
+@media(max-width :$breakpoint-medium){
+    .bg-image{
+        height: 90vh;
+    }
+
+    footer{
+        display: none;
+    }
+    .formIcons{
+        display : none;
+    }
+
+    #navbarre{
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+    }
+}
 
 @import "./../../../node_modules/bootstrap/scss/bootstrap";
