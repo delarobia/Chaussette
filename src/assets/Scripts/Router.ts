@@ -1,4 +1,5 @@
-import AccueilScreen from "../screen/AccueilScreen";
+
+import AccueilScreen from "../screens/AccueilScreen";
 import App from "./App";
 
 class Router{
@@ -55,4 +56,4 @@ class Router{
     }
 }
 
-export default Router
+export default Router;

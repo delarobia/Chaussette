@@ -26,16 +26,18 @@ class App {
         this._router = new Router();
     }
 
-    //Méthode Render
+
     render() {
         const page = document.getElementById("main");
         if (page) {
             page.firstElementChild?.remove();
             if (this.router.screen) {
                 page.append(this.router.screen);
+
             }
         }
     }
 }
 
 export default App;
+
