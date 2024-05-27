@@ -29,14 +29,16 @@ class App{
 
     //Méthode Render
     render(){
-        const page = document.getElementById("app");
+        const page = document.getElementById("main");
         if(page){
             page.firstElementChild?.remove();
+            console.log("remove");
             if(this.router.screen){
                  page.append(this.router.screen);
+                 console.log("append");
             }
         }
     }
 }
 
-export default App
+export default App;

@@ -1,3 +1,4 @@
+import AccueilScreen from "../screens/AccueilScreen";
 import App from "./App";
 class Router{
     //Screen
@@ -39,7 +40,7 @@ class Router{
             case "/index":
             case "/connect":
             case "/connexion":
-                //ici mettre écran d'acceuil
+                this._screen = new AccueilScreen();
                 break;
             case "/signup":
             case "/inscription" :
@@ -52,4 +53,4 @@ class Router{
     }
 }
 
-export default Router
+export default Router;
