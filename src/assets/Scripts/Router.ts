@@ -1,4 +1,6 @@
+import AccueilScreen from "../screen/AccueilScreen";
 import App from "./App";
+
 class Router{
     //Screen
     private _screen : HTMLElement | null = null;
@@ -39,14 +41,15 @@ class Router{
             case "/index":
             case "/connect":
             case "/connexion":
-                //ici mettre écran d'acceuil
+                this._screen = new AccueilScreen();
+                // TODO ici mettre écran d'acceuil
                 break;
             case "/signup":
             case "/inscription" :
-                //ici  mettre écran de création de compte
+                // TODO ici  mettre écran de création de compte
                 break;
             default:
-                //afficher notre superbe page d'erreur conçue avec tout l'amour du nain et des excuses de sbires
+                // TODO afficher notre superbe page d'erreur conçue avec tout l'amour du nain et des excuses de sbires
         }
         App.instance.render();
     }
