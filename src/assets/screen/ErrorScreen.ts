@@ -164,7 +164,22 @@ class ErrorScreen extends HTMLElement {
         </div>
         </nav>
 
-        <div class="text-rouge-velours bg-light"> Je suis désolé, la page demandée n'existe pas, c'est parce ${element.qui} ${element.quoi} dans ${element.ou} et tout ça à cause ${element.adjectif} ${element.truc} qui ${element.quesque} donc <a href="/">retournez à l'accueil</a>.</div>
+        <div class="container">
+        <div class="row my-5">
+            <div class="col-sm-6">
+                <div class="card ">
+                    <div class="card-body bg-parchemin">
+                        <div class="text-rouge-velours "> Je suis désolé, la page demandée n'existe pas, c'est parce ${element.qui} ${element.quoi} dans ${element.ou} et tout ça à cause ${element.adjectif} ${element.truc} qui ${element.quesque} donc <a href="/">retournez à l'accueil</a>.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-fluid" src="./src/assets/img/Nain_Art_corrigé.png" alt="Le nain">
+            </div>
+        </div>
+        </div>
+
+        
         
         <footer class="">
         <div class="container-fluid">
