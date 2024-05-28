@@ -137,14 +137,17 @@ class ErrorScreen extends MotherScreen {
 
         <div class="container">
             <div class="row my-5 align-items-center">
-                <div class="col-sm-6">
+                <div class="col-sm-7">
                     <div class="card ">
                         <div class="card-body bg-parchemin">
-                            <div class="text-rouge-velours "> Je suis désolé, la page demandée n'existe pas, c'est parce ${element.qui} ${element.quoi} dans ${element.ou} et tout ça à cause ${element.adjectif} ${element.truc} qui ${element.quesque} donc <a href="/">retournez à l'accueil</a>.</div>
+                            <div class="text-rouge-velours text-center"> Je suis désolé, la page demandée n'existe pas, <br/>
+                            c'est parce ${element.qui} ${element.quoi} dans ${element.ou} <br/>
+                            et tout ça à cause ${element.adjectif} ${element.truc} qui ${element.quesque} <br/>
+                            donc <a href="/">retournez à l'accueil</a>.</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-5">
                     <img class="img-fluid" src="./src/assets/img/Nain_Art_corrigé.png" alt="Le nain">
                 </div>
             </div>

@@ -2,6 +2,11 @@ import MotherScreen from "../class/MotherScreen";
 
 class AccueilScreen extends MotherScreen{
 
+    constructor(){
+        super();
+        this.innerHTML = this.render();
+    }
+
     override render(){
         return `<nav class="navbar navbar-expand-lg bg-parchemin">
         <div class="container-fluid">
@@ -64,4 +69,5 @@ class AccueilScreen extends MotherScreen{
     }
 }
 customElements.define("accueil-screen", AccueilScreen);
+
 export default AccueilScreen;
