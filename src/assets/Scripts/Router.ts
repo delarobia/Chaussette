@@ -1,5 +1,6 @@
 
 import AccueilScreen from "../screen/AccueilScreen";
+import ErrorScreen from "../screen/ErrorScreen";
 import App from "./App";
 
 class Router{
@@ -50,7 +51,7 @@ class Router{
                 // TODO ici  mettre écran de création de compte
                 break;
             default:
-                // TODO afficher notre superbe page d'erreur conçue avec tout l'amour du nain et des excuses de sbires
+                this._screen = new ErrorScreen();
         }
         App.instance.render();
     }

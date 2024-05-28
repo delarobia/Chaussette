@@ -4,9 +4,7 @@ abstract class MotherComponent extends HTMLElement{
         this.innerHTML = this.render();
     }
 
-    render(){
-        return ``;
-    }
+    abstract render():string
 
 
 }

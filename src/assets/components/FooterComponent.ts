@@ -8,7 +8,7 @@ class FooterComponent extends MotherComponent{
         <div class="container-fluid">
             <div class="row bg-parchemin fixed-bottom ">
                 <div class="col text-rouge-velours d-flex justify-content-center my-4 fs-4">
-                    Copyright
+                    Tu veux un chiantos ?
                 </div>
             </div>
         </div>
