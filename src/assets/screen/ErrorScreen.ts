@@ -1,27 +1,18 @@
-class ErrorScreen extends HTMLElement {
-    private tabqui = [
-        "qu' un zombie",
-        "que le troll érudit",
-        "que l'un des gardiens",
-        "qu' un rat mutant",
-        "que l'aubergiste",
-        "que le bourreau ivre",
-        "qu'un ménestrel moche",
-        "que le gobelin de ménage",
-        "qu'un orque d'élite",
-        "que le sorcier stagiaire",
-        "qu'un type suspect",
-        "que le prisonier barbu",
-        "que l'herboriste",
-        "que le chien d'un voisin",
-        "qu'un garde de la ville",
-        "qu'un colporteur",
-        "qu'un aventurier",
-        "que le plombier",
-        "que l'ingénieur gobelin",
-        "qu'un vieux fou",
-    ];
-    private tabquoi = [
+import MotherScreen from "../class/MotherScreen";
+
+let tabqui :string[]= [
+    "qu' un zombie", "que le troll érudit",
+    "que l'un des gardiens", "qu' un rat mutant",
+    "que l'aubergiste", "que le bourreau ivre",
+    "qu'un ménestrel moche", "que le gobelin de ménage",
+    "qu'un orque d'élite", "que le sorcier stagiaire",
+    "qu'un type suspect", "que le prisonier barbu",
+    "que l'herboriste", "que le chien d'un voisin",
+    "qu'un garde de la ville", "qu'un colporteur",
+    "qu'un aventurier", "que le plombier",
+    "que l'ingénieur gobelin", "qu'un vieux fou",
+];
+let tabquoi = [
         "a glissé",
         "a dérapé",
         "a cassé un bidule",
@@ -42,8 +33,8 @@ class ErrorScreen extends HTMLElement {
         "s'est battu",
         "a causé des ennuis",
         "a mis le feu",
-    ];
-    private tabou = [
+];
+let tabou = [
         "la cave",
         "le souterrain nord",
         "le grenier",
@@ -64,8 +55,8 @@ class ErrorScreen extends HTMLElement {
         "l'antre de Golbarg",
         "le magasin",
         "votre bibliothèque",
-    ];
-    private tabadjectif = [
+];
+let tabadjectif = [
         "de cette bête",
         "de cette stupide",
         "d'une grosse",
@@ -86,8 +77,8 @@ class ErrorScreen extends HTMLElement {
         "de la position d'une",
         "de son penchant pour une",
         "d'une médiocre",
-    ];
-    private tabtruc = [
+];
+let tabtruc = [
         "brouette rouillée",
         "manivelle tordue",
         "scie tordue",
@@ -108,8 +99,8 @@ class ErrorScreen extends HTMLElement {
         "chaussette rouge",
         "babouche verte",
         "pantoufle usée",
-    ];
-    private tabquesque = [
+];
+let tabquesque = [
         "venait de ma grand-mère",
         "était justement là",
         "est apparue comme par magie",
@@ -130,7 +121,9 @@ class ErrorScreen extends HTMLElement {
         "s'est révélée glissante",
         "était peut-être à moi",
         "pose toujours des problèmes",
-    ];
+];
+
+class ErrorScreen extends MotherScreen {
 
     constructor() {
         super();
@@ -140,66 +133,34 @@ class ErrorScreen extends HTMLElement {
     render() {
         let element = this.getErreurRandom();
         return `
-        <nav class="navbar navbar-expand-lg bg-parchemin">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="connect">
-                    <input class="form-control me-2" type="text" placeholder="Identifiant" aria-label="Id">
-                    <input class="form-control me-2" type="password" placeholder="Mot de passe" aria-label="Mdp">
-                    <button class="btn btn-outline-success" type="submit">Connection</button>
-                </form>
-            </div>
-        </div>
-        </nav>
+        <div><signin-header-component></div>
 
         <div class="container">
-        <div class="row my-5">
-            <div class="col-sm-6">
-                <div class="card ">
-                    <div class="card-body bg-parchemin">
-                        <div class="text-rouge-velours "> Je suis désolé, la page demandée n'existe pas, c'est parce ${element.qui} ${element.quoi} dans ${element.ou} et tout ça à cause ${element.adjectif} ${element.truc} qui ${element.quesque} donc <a href="/">retournez à l'accueil</a>.</div>
+            <div class="row my-5 align-items-center">
+                <div class="col-sm-6">
+                    <div class="card ">
+                        <div class="card-body bg-parchemin">
+                            <div class="text-rouge-velours "> Je suis désolé, la page demandée n'existe pas, c'est parce ${element.qui} ${element.quoi} dans ${element.ou} et tout ça à cause ${element.adjectif} ${element.truc} qui ${element.quesque} donc <a href="/">retournez à l'accueil</a>.</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <img class="img-fluid" src="./src/assets/img/Nain_Art_corrigé.png" alt="Le nain">
-            </div>
-        </div>
-        </div>
-
-        
-        
-        <footer class="">
-        <div class="container-fluid">
-            <div class="row bg-parchemin fixed-bottom ">
-                <div class="col text-rouge-velours d-flex justify-content-center my-4">
-                    Copyright
+                <div class="col-sm-6">
+                    <img class="img-fluid" src="./src/assets/img/Nain_Art_corrigé.png" alt="Le nain">
                 </div>
             </div>
         </div>
-        </footer>`;
+
+        <div><footer-component></div>`;
     }
 
     getErreurRandom() {
         let qui, quoi, ou, quesque, truc, adjectif;
-        qui = this.getRandom(this.tabqui);
-        quoi = this.getRandom(this.tabquoi);
-        ou = this.getRandom(this.tabou);
-        quesque = this.getRandom(this.tabquesque);
-        truc = this.getRandom(this.tabtruc);
-        adjectif = this.getRandom(this.tabadjectif);
+        qui = this.getRandom(tabqui);
+        quoi = this.getRandom(tabquoi);
+        ou = this.getRandom(tabou);
+        quesque = this.getRandom(tabquesque);
+        truc = this.getRandom(tabtruc);
+        adjectif = this.getRandom(tabadjectif);
         return {
             qui: qui,
             quoi: quoi,
