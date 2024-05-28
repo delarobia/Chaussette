@@ -1,5 +1,5 @@
 
-import AccueilScreen from "../screens/AccueilScreen";
+import AccueilScreen from "../screen/AccueilScreen";
 import App from "./App";
 
 class Router{
