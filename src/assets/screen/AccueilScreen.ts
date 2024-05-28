@@ -40,10 +40,9 @@ class AccueilScreen extends MotherScreen{
         </div>
     </nav>
 
-    <div class = "bg-image d-flex align-items-center justify-content-center">
+    <div class = "bg-image d-flex align-items-center justify-content-center pb-5">
         <div class="container row">
-            <div class="col-12">
-                <div class="card bg-white bg-opacity-75 text-rouge-velours text-center">
+                <div class=" col-12 container bg-white bg-opacity-75 text-rouge-velours text-center border border-4 border-rouge-velours fs-4 py-5 px-4">
                     Bonjour aventurier en quête de gloire (ou de simple survie) dans l'univers rocambolesque des Donjons de Naheulbeuk ! 🌟 <br />
                     Bienvenue sur notre site web, le sanctuaire ultime pour les maîtres du jeu et les héros en herbe qui cherchent à plonger <br />
                     dans les aventures épiques (et souvent absurdes) de Naheulbeuk.<br />
@@ -55,7 +54,6 @@ class AccueilScreen extends MotherScreen{
                     Préparez vos dés, affûtez vos haches et en avant pour des aventures mémorables où le ridicule ne tue pas… mais les pièges si.<br />
                     À bientôt dans les couloirs sombres et les tavernes bruyantes de Naheulbeuk ! 🗡️🎲🍺<br />
                 </div>
-            </div>
         </div>
     </div>
 
