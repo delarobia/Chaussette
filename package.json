@@ -1,13 +1,17 @@
 {
-  "version": "1.0.0",
+  "name": "chaussette",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-	 "web":"npx ws --spa ./src/index.html",
-    "sass": "npx sass --watch src/assets/styles/style.scss ./src/assets/styles/style.css"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "bootstrap": "^5.3.3",
-    "local-web-server": "^5.3.3",
-    "sass": "^1.77.2"
-}
+    "sass": "^1.77.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
 }
