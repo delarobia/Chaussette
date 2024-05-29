@@ -1,6 +1,11 @@
 import MotherComponent from "../class/MotherComponent";
 
 class SigninHeaderComponent extends MotherComponent{
+
+    constructor(){
+        super();
+        this.innerHTML = this.render();
+    }
     
     override render(){
         return `
@@ -18,7 +23,7 @@ class SigninHeaderComponent extends MotherComponent{
                         <a class="nav-link active text-rouge-velours  fs-3" aria-current="page" href="#">Chaussette</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="connect">
+                <form class="d-flex" role="connect" novalidate>
                     <div class="">
                         <div class="d-flex pb-2">
                             <div class="d-flex align-items-center">
