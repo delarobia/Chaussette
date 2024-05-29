@@ -1,7 +1,7 @@
 import Account from "../class/Account";
 
 class AccountService{
-    private _data:string[] = [];
+    private _data:Account[] = [];
 
     constructor(){
         const Ls = localStorage.getItem('AccountList');
