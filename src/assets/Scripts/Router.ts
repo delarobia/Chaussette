@@ -16,8 +16,6 @@ class Router{
     }
     //Setter ?
 
-
-
     //Constructeur
     constructor(){
         window.onclick = this.clickHandler;
