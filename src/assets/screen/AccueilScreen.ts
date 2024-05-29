@@ -9,6 +9,7 @@ class AccueilScreen extends MotherScreen{
 
     override render(){
         return `
+
         <div><signin-header-component></div>
 
         <div class = "bg-image d-flex align-items-center justify-content-center">
@@ -26,12 +27,16 @@ class AccueilScreen extends MotherScreen{
                         Préparez vos dés, affûtez vos haches et en avant pour des aventures mémorables où le ridicule ne tue pas… mais les pièges si.<br />
                         À bientôt dans les couloirs sombres et les tavernes bruyantes de Naheulbeuk ! 🗡️🎲🍺<br />
                     </div>
+
                 </div>
             </div>
         </div>
 
-        <footer-component>`;
-    }
+
+
+    <footer><footer-component/></footer>
+       `;}
+
 }
 customElements.define("accueil-screen", AccueilScreen);
 

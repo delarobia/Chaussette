@@ -12,6 +12,12 @@
   height: 50px;
 }
 
+.navBtn {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
 .navSock {
   width: 70px;
   height: 70px;

@@ -1,6 +1,7 @@
 
 import AccueilScreen from "../screen/AccueilScreen";
 import ErrorScreen from "../screen/ErrorScreen";
+import SignUpScreen from "../screen/SignUpScreen";
 import App from "./App";
 
 class Router{
@@ -42,10 +43,11 @@ class Router{
             case "/connect":
             case "/connexion":
                 this._screen = new AccueilScreen();
-                // TODO ici mettre écran d'acceuil
+                // TODO ici mettre écran d'accueil
                 break;
             case "/signup":
             case "/inscription" :
+                this._screen = new SignUpScreen();
                 // TODO ici  mettre écran de création de compte
                 break;
             default:
