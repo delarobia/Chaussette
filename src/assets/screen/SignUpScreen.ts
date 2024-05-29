@@ -1,6 +1,13 @@
+
 import MotherScreen from "../class/MotherScreen";
 
 class SignUpScreen extends MotherScreen{
+
+    constructor(){
+        super();
+        this.innerHTML = this.render();
+    }
+
     override render(){
         return `
     <header><signin-header-component/></header>

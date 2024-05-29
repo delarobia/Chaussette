@@ -28,8 +28,13 @@ class Account{
         return this._pseudo;
     }
 
-  set pseudo(value){
-    this._pseudo = value;
+    set pseudo(value){
+        let regex = /^[a-zA-Z0-9-_&@]{3,}/
+        if(regex.test(value)){
+            this._pseudo = value;
+        } else {
+            throw new EvalError(`${value} n'est pas pseudo valide`);
+        }
     }
 
     get email(){
@@ -40,7 +45,7 @@ class Account{
         let regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/;
         if(regex.test(value)){
             this._email = value;
-        }else{
+        } else {
             throw new EvalError("$[value] n'est pas un mail valide");
         }
         
@@ -51,7 +56,13 @@ class Account{
     }
 
     set password(value){
-        this._password = value;
+        let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}$/
+        if (regex.test(value)){
+            this._password = value;
+        } else {
+            throw new EvalError("$[value] n'estne correspond pas à un mot de passe valide");
+        }
+        
     }
 
     get MJ(){
@@ -64,7 +75,7 @@ class Account{
 
     toJSON(){
         return{
-            id : this.id,
+        id : this.id,
         pseudo : this.pseudo,
         email : this.email,
         password : this.password,
