@@ -4,7 +4,9 @@ class AccueilScreen extends MotherScreen{
 
     override render(){
         return `
-        <div><signin-header-component></div>
+
+        <header><signin-header-component/></header>
+
 
         <div class = "bg-image d-flex align-items-center justify-content-center pb-5">
             <div class="container row">
@@ -23,8 +25,10 @@ class AccueilScreen extends MotherScreen{
             </div>
         </div>
 
-        <div><footer-component></div>`;
-    }
+
+    <footer><footer-component/></footer>
+       `;
+
 }
 customElements.define("accueil-screen", AccueilScreen);
 export default AccueilScreen;

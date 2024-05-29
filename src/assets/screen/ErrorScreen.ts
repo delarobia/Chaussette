@@ -133,7 +133,7 @@ class ErrorScreen extends MotherScreen {
     render() {
         let element = this.getErreurRandom();
         return `
-        <div><signin-header-component></div>
+        <div><signin-header-component/></div>
 
         <div class="container">
             <div class="row my-5 align-items-center">
@@ -150,7 +150,7 @@ class ErrorScreen extends MotherScreen {
             </div>
         </div>
 
-        <div><footer-component></div>`;
+        <div><footer-component/></div>`;
     }
 
     getErreurRandom() {

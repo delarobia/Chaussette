@@ -31,8 +31,8 @@ class SigninHeaderComponent extends MotherComponent{
                             </div>
                         </div>
                         <div class ="d-flex justify-content-end pe-1">
-                            <button class="btn btn-sm btn-rouge-velours mx-2" type="submit">Connection</button>
-                            <button class="btn btn-sm btn-rouge-velours" type="submit">Chaussette ?</button>
+                            <button class="btn btn-sm btn-rouge-velours mx-2" type="submit"><a class ="navBtn" href="/connexion" target="spa">Connexion</a></button>
+                            <button class="btn btn-sm btn-rouge-velours" type="submit"><a class ="navBtn" href="/inscription" target="spa"> Chaussette ?</a></button>
                         </div>
                     </div>
                 </form>
