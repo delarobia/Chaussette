@@ -35,7 +35,9 @@ class AccueilScreen extends MotherScreen{
 
 
     <footer><footer-component/></footer>
-       `;}
+
+       `;
+    }
 
 }
 customElements.define("accueil-screen", AccueilScreen);
