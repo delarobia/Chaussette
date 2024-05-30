@@ -14,7 +14,6 @@ abstract class MotherScreen extends HTMLElement{
         this._props.footer = new FooterComponent();
     }
     abstract render():string
-   
     
 }
 export default MotherScreen;
