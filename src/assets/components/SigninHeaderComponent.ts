@@ -1,4 +1,4 @@
-import Account from "../class/Account";
+//? import Account from "../class/Account";
 import MotherComponent from "../class/MotherComponent";
 import AccountService from "../services/AccountService";
 
@@ -18,19 +18,14 @@ class SigninHeaderComponent extends MotherComponent{
         e.preventDefault();
         let entries = Object.fromEntries(new FormData(this._form));
         try {
-            let testAccount = new Account(
-                {
-                    id:1,
-                    pseudo: entries.connectPseudo.toString(),
-                    password: entries.connectPassword.toString(),
-                    email:"alex@alex.com",
-                    MJ:false
-                }
-            );
+            // TODO : Trouver un seul profil via le pseudo
+            // TODO : Vérifier le mot de passes
             const as = new AccountService();
-            console.log(`Pouet ${as} `)
-            as.create(testAccount);
-            console.log(testAccount.toJSON());
+            console.log(`Account Service : ${as.data} `)
+            console.log(entries)
+
+            // TODO : créer un cookie de connexion
+            
 
         } catch (error) {
             console.warn(error);
