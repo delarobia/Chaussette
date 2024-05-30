@@ -82,6 +82,10 @@ class Account{
         MJ : this.MJ
         }
     }
+
+    toString(){
+        return `Id : ${this.id}, Pseudo : ${this.pseudo}, Mail : ${this.email}, Mot de passe : ${this.password} et ${this.MJ?"est un MJ":"n'est pas un MJ"}`
+    }
 }
 
 export default Account;
