@@ -1,6 +1,11 @@
 import MotherComponent from "../class/MotherComponent";
 
 class FooterComponent extends MotherComponent{
+
+    constructor(){
+        super();
+        this.innerHTML = this.render();
+    }
     
     override render(){
         return `

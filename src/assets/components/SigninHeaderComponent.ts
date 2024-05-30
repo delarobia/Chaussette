@@ -1,12 +1,48 @@
+import Account from "../class/Account";
 import MotherComponent from "../class/MotherComponent";
+import AccountService from "../services/AccountService";
 
 class SigninHeaderComponent extends MotherComponent{
+
+    private _form:HTMLFormElement;
+
+    constructor(){
+        super();
+        this.innerHTML = this.render();
+
+        this._form = this.querySelector('#formConnect') as HTMLFormElement
+        this._form.onsubmit = this.handleBoutonConnect
+    }
     
+    handleBoutonConnect = (e:SubmitEvent):void => {
+        e.preventDefault();
+        let entries = Object.fromEntries(new FormData(this._form));
+        try {
+            let testAccount = new Account(
+                {
+                    id:1,
+                    pseudo: entries.connectPseudo.toString(),
+                    password: entries.connectPassword.toString(),
+                    email:"alex@alex.com",
+                    MJ:false
+                }
+            );
+            const as = new AccountService();
+            console.log(`Pouet ${as} `)
+            as.create(testAccount);
+            console.log(testAccount.toJSON());
+
+        } catch (error) {
+            console.warn(error);
+        }
+    }
+    
+
     override render(){
         return `
         <nav id ="navbarre" class="navbar navbar-expand-lg bg-parchemin">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class ="navSock" src="./src/assets/img/icon-park-outline_socks.svg"></a>
+            <a class="navbar-brand" href="/" target="spa"><img class ="navSock" src="./src/assets/img/icon-park-outline_socks.svg"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -18,21 +54,21 @@ class SigninHeaderComponent extends MotherComponent{
                         <a class="nav-link active text-rouge-velours  fs-3" aria-current="page" href="#">Chaussette</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="connect">
+                <form id="formConnect" class="d-flex" role="connect" novalidate>
                     <div class="">
                         <div class="d-flex pb-2">
                             <div class="d-flex align-items-center">
                                 <img class ="mx-2 navIcons" src="./src/assets/img/memory_email.svg">
-                                <input class="form-control" type="text" placeholder="Identifiant" aria-label="Id">
+                                <input class="form-control" type="text" placeholder="Identifiant" aria-label="Id" name="connectPseudo">
                             </div>
                             <div class="d-flex align-items-center">
                                 <img class="mx-2 navIcons" src="./src/assets/img/memory_key.svg">
-                                <input class="form-control" type="password" placeholder="Mot de passe" aria-label="Mdp">
+                                <input class="form-control" type="password" placeholder="Mot de passe" aria-label="Mdp" name="connectPassword">
                             </div>
                         </div>
                         <div class ="d-flex justify-content-end pe-1">
-                            <button class="btn btn-sm btn-rouge-velours mx-2" type="submit"><a class ="navBtn" href="/connexion" target="spa">Connexion</a></button>
-                            <button class="btn btn-sm btn-rouge-velours" type="submit"><a class ="navBtn" href="/inscription" target="spa"> Chaussette ?</a></button>
+                            <button id="btnConnect" class="btn btn-sm btn-rouge-velours mx-2" type="submit">Connexion</button>
+                            <button class="btn btn-sm btn-rouge-velours" type="button"><a class ="navBtn" href="/inscription" target="spa"> Chaussette ?</a></button>
                         </div>
                     </div>
                 </form>

@@ -13,6 +13,7 @@ abstract class MotherScreen extends HTMLElement{
         this._props.SigninHeader = new SigninHeaderComponent();
         this._props.footer = new FooterComponent();
     }
+
     abstract render():string
     
 }

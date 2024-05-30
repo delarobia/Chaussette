@@ -1,8 +1,10 @@
+
 import Account from "../class/Account";
 import MotherScreen from "../class/MotherScreen";
 import AccountService from "../services/AccountService";
 
 class SignUpScreen extends MotherScreen{
+
 
     private _form: HTMLFormElement;
 
