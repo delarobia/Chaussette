@@ -19,9 +19,24 @@ constructor(){
 handleFormSubmit = (e:SubmitEvent):void => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(this._form));
+
+    const createPassword = entries.createPassword.toString();
+    const confirmPassword = entries.confirmPassword.toString();
+    if(createPassword !== confirmPassword){
+        console.warn("Le mots de passe ne correspondent pas.")
+        const differentPassword = document.getElementById("differentPassword");
+
+        if(differentPassword){
+            differentPassword.textContent = "Les mots de passe ne correspondent pas.";
+            setTimeout(() => {
+                differentPassword.textContent = "";
+              }, 2000);
+        }
+           
+          return;
+    }
+
     try{
-        //TODO vérifier que create password = à confirmPassword (Solen)
-        //TODO id + MJ ?
         let testaccount = new Account({
             id:0,
             pseudo:entries.createPseudo.toString(),
@@ -36,6 +51,7 @@ handleFormSubmit = (e:SubmitEvent):void => {
         console.warn(error);
     }
     console.log("passes pas ici");
+    
 }
 
     override render(){
@@ -80,6 +96,7 @@ handleFormSubmit = (e:SubmitEvent):void => {
                         </div>
                         <div class="col-4">
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
+                            <span id ="differentPassword"></span> 
                         </div>
                     </div>
                     <div class="form_display mb-3 row">
