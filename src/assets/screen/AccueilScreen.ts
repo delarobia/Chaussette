@@ -10,11 +10,11 @@ class AccueilScreen extends MotherScreen{
     override render(){
         return `
 
-        <div><signin-header-component></div>
+        <header><signin-header-component></header>
 
-        <div class = "bg-image d-flex align-items-center justify-content-center pb-5">
+        <div class = "bg-image d-flex align-items-center justify-content-center pb-5 flex-fill">
             <div class="container row">
-                <div class=" col-12 container bg-white bg-opacity-75 text-rouge-velours text-center border border-4 border-rouge-velours fs-4 py-5 px-4">
+                <div class="accueilText col-12 container bg-white bg-opacity-75 text-rouge-velours text-center border border-4 border-rouge-velours fs-4 py-5 px-4">
                     Bonjour aventurier en quête de gloire (ou de simple survie) dans l'univers rocambolesque des Donjons de Naheulbeuk ! 🌟 <br />
                     Bienvenue sur notre site web, le sanctuaire ultime pour les maîtres du jeu et les héros en herbe qui cherchent à plonger <br />
                     dans les aventures épiques (et souvent absurdes) de Naheulbeuk.<br />
@@ -28,9 +28,6 @@ class AccueilScreen extends MotherScreen{
                 </div>
             </div>
         </div>
-
-
-
     <footer><footer-component/></footer>
 
        `;

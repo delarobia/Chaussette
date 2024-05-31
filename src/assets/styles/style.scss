@@ -71,8 +71,15 @@ $nav-icon-size : 50px;
 }
 
 //Media queries
+$breakpoint-extra-small : 428px;
 $breakpoint-small: 977px;
 $breakpoint-medium: 990px;
+
+@media(max-width :$breakpoint-extra-small){
+    .accueilText {
+        font-size: smaller;
+    }
+}
 
 @media(max-width :$breakpoint-small){
     .form_contain{
@@ -93,7 +100,7 @@ $breakpoint-medium: 990px;
 
 @media(max-width :$breakpoint-medium){
     .bg-image{
-        height: 90vh;
+        height: 100vh;
     }
 
     footer{
@@ -106,7 +113,7 @@ $breakpoint-medium: 990px;
     #navbarre{
         bottom: 0;
         width: 100%;
-        position: absolute;
+        position: fixed;
     }
 }
 
