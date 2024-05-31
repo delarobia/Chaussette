@@ -10,7 +10,7 @@ class AccueilScreen extends MotherScreen{
     override render(){
         return `
 
-        <div><signin-header-component></div>
+        <div>${this.getGoodheader()}</div>
 
         <div class = "bg-image d-flex align-items-center justify-content-center pb-5">
             <div class="container row">

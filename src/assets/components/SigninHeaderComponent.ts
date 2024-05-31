@@ -31,6 +31,10 @@ class SigninHeaderComponent extends MotherComponent {
                 if (foundAccount[0] instanceof Account) {
                     if (foundAccount[0].password === entries.connectPassword) {
                         console.error("Connecté");
+                        let fiveminutes = new Date(Date.now() + (5*60*1000));
+                        console.log(fiveminutes.toUTCString());
+                        document.cookie = `user=${foundAccount[0]}; path=/; expires=${fiveminutes.toUTCString()} `;
+                        window.location.href = "/";
                         // TODO : créer un cookie de connexion
                     } else {
                         console.log("Piiiiiirate");

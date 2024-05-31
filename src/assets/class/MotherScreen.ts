@@ -15,6 +15,14 @@ abstract class MotherScreen extends HTMLElement{
         this._props.footer = new FooterComponent();
     }
 
+    getGoodheader(){
+        if(document.cookie.includes("user")){
+            return '<online-header-component/>';
+        } else {
+            return '<signin-header-component/>';
+        }
+    }
+
     abstract render():string
     
 }
