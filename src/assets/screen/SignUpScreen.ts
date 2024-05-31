@@ -20,8 +20,9 @@ handleFormSubmit = (e:SubmitEvent):void => {
     e.preventDefault();
     const entries = Object.fromEntries(new FormData(this._form));
 
-    const createPassword = entries.createPassword.toString();
-    const confirmPassword = entries.confirmPassword.toString();
+    const createPassword = entries.createPassword.toString() || "";
+    const confirmPassword = entries.confirmPassword.toString() || "";
+    
     if(createPassword !== confirmPassword){
         console.warn("Le mots de passe ne correspondent pas.")
         const differentPassword = document.getElementById("differentPassword");
