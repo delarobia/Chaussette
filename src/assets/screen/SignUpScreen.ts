@@ -58,7 +58,7 @@ handleFormSubmit = (e:SubmitEvent):void => {
     override render(){
         return `
     <header><signin-header-component/></header>
-    <div class = "bg-image d-flex align-items-center">
+    <div class = "bg-image d-flex align-items-center py-3">
         <div class=" container col-7 mx-auto">
             <form novalidate id="createAccount">
                 <div id="againstBT" class="container bg-parchemin text-rouge-velours py-3 border border-4 border-rouge-velours"> 

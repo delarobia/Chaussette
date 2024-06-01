@@ -11,7 +11,7 @@ class FooterComponent extends MotherComponent{
         return `
         <footer class="">
             <div class="container-fluid">
-                <div class="row bg-parchemin fixed-bottom ">
+                <div class="row bg-parchemin">
                     <div class="col text-rouge-velours d-flex justify-content-center my-4 fs-4">
                         Tu veux un chiantos ?
                     </div>

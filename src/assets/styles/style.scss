@@ -16,13 +16,12 @@ $theme-colors : map-merge($map1: $theme-colors, $map2: $custom_map);
 
 //Image de fond
 .bg-image{
-    height: 88vh;
+    min-height: 88vh;
     background-image: url('../img/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 
 //Icones dans le formulaire signIn
 $form-icon-size : 50px;
