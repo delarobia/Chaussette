@@ -3,6 +3,10 @@ import Account from "../class/Account";
 class AccountService{
     private _data:Account[] = [];
 
+    get data(){
+        return this._data;
+    }
+
     constructor(){
         const Ls = localStorage.getItem('AccountList');
         if(Ls){
@@ -18,7 +22,7 @@ class AccountService{
         localStorage.setItem('AccountList', JSON.stringify(this._data));
     }
 
-    read(filtre:(item:Account)=>Account[]){
+    read(filtre:(account:Account) => boolean){
         const Ls = localStorage.getItem('AccountList');
         if(Ls){
             this._data = JSON.parse(Ls).map((account:Account) => new Account(account));

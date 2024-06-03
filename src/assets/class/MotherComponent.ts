@@ -1,11 +1,9 @@
 abstract class MotherComponent extends HTMLElement{
-    
+
     constructor(){
         super();
     }
-
     abstract render():string
-
 
 }
 

@@ -1,44 +1,50 @@
+//? import Account from "../class/Account";
 import Account from "../class/Account";
 import MotherComponent from "../class/MotherComponent";
 import AccountService from "../services/AccountService";
 
-class SigninHeaderComponent extends MotherComponent{
+class SigninHeaderComponent extends MotherComponent {
+    private _form: HTMLFormElement;
 
-    private _form:HTMLFormElement;
-
-    constructor(){
+    constructor() {
         super();
         this.innerHTML = this.render();
 
-        this._form = this.querySelector('#formConnect') as HTMLFormElement
-        this._form.onsubmit = this.handleBoutonConnect
+        this._form = this.querySelector("#formConnect") as HTMLFormElement;
+        this._form.onsubmit = this.handleBoutonConnect;
     }
-    
-    handleBoutonConnect = (e:SubmitEvent):void => {
+
+    handleBoutonConnect = (e: SubmitEvent): void => {
         e.preventDefault();
         let entries = Object.fromEntries(new FormData(this._form));
         try {
-            let testAccount = new Account(
-                {
-                    id:1,
-                    pseudo: entries.connectPseudo.toString(),
-                    password: entries.connectPassword.toString(),
-                    email:"alex@alex.com",
-                    MJ:false
-                }
-            );
             const as = new AccountService();
-            console.log(`Pouet ${as} `)
-            as.create(testAccount);
-            console.log(testAccount.toJSON());
+            console.log(
+                `Account Service : ${as.data.map((a) => a.toString() + "\n")} `
+            );
+            let foundAccount = as.read(
+                (ac) => ac.pseudo === entries.connectPseudo
+            );
 
+            console.log(foundAccount);
+            if (foundAccount?.length) {
+                if (foundAccount[0] instanceof Account) {
+                    if (foundAccount[0].password === entries.connectPassword) {
+                        console.error("Connecté");
+                        // TODO : créer un cookie de connexion
+                    } else {
+                        console.log("Piiiiiirate");
+                    }
+                } else {
+                    console.log("Pas un compte");
+                }
+            }
         } catch (error) {
             console.warn(error);
         }
-    }
-    
+    };
 
-    override render(){
+    override render() {
         return `
         <nav id ="navbarre" class="navbar navbar-expand-lg bg-parchemin">
         <div class="container-fluid">
@@ -74,11 +80,10 @@ class SigninHeaderComponent extends MotherComponent{
                 </form>
             </div>
         </div>
-        </nav>`
+        </nav>`;
     }
 }
 
-customElements.define('signin-header-component', SigninHeaderComponent);
+customElements.define("signin-header-component", SigninHeaderComponent);
 
 export default SigninHeaderComponent;
-

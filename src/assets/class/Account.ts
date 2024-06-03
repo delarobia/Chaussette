@@ -46,7 +46,7 @@ class Account{
         if(regex.test(value)){
             this._email = value;
         } else {
-            throw new EvalError("$[value] n'est pas un mail valide");
+            throw new EvalError(`${value} n'est pas un mail valide`);
         }
         
     }
@@ -60,7 +60,7 @@ class Account{
         if (regex.test(value)){
             this._password = value;
         } else {
-            throw new EvalError("$[value] n'estne correspond pas à un mot de passe valide");
+            throw new EvalError(`"${value}" n'estne correspond pas à un mot de passe valide`);
         }
         
     }
@@ -81,6 +81,10 @@ class Account{
         password : this.password,
         MJ : this.MJ
         }
+    }
+
+    toString(){
+        return `Id : ${this.id}, Pseudo : ${this.pseudo}, Mail : ${this.email}, Mot de passe : ${this.password} et ${this.MJ?"est un MJ":"n'est pas un MJ"}`
     }
 }
 

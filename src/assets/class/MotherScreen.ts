@@ -1,4 +1,5 @@
 import FooterComponent from "../components/FooterComponent";
+import OnlineHeaderComponent from "../components/OnlineHeaderComponent";
 import SigninHeaderComponent from "../components/SigninHeaderComponent";
 
 abstract class MotherScreen extends HTMLElement{
@@ -9,7 +10,7 @@ abstract class MotherScreen extends HTMLElement{
         super();
         
         this._props = {};
-        this._props.onlineHeader;//TODO
+        this._props.onlineHeader = new OnlineHeaderComponent(); 
         this._props.SigninHeader = new SigninHeaderComponent();
         this._props.footer = new FooterComponent();
     }

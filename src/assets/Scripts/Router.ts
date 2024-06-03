@@ -43,12 +43,10 @@ class Router{
             case "/connect":
             case "/connexion":
                 this._screen = new AccueilScreen();
-                // TODO ici mettre écran d'accueil
                 break;
             case "/signup":
             case "/inscription" :
                 this._screen = new SignUpScreen();
-                // TODO ici  mettre écran de création de compte
                 break;
             default:
                 this._screen = new ErrorScreen();
