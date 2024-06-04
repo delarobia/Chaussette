@@ -1,0 +1,6 @@
+[
+	{"id":0, "pseudo":"Pehem", "email":"p-m@alex.com", "password":"Azerty*azerty1", "MJ":false},
+	{"id":1, "pseudo":"Sam", "email":"sam@alex.com", "password":"S@m1Sam*00", "MJ":false},
+	{"id":2, "pseudo":"Antoine", "email":"antoine@alex.com", "password":"Antoine01*", "MJ":false},
+	{"id":3, "pseudo":"Solen", "email":"solen@alex.fr", "password":"Soso*Soso1", "MJ":false}
+]
